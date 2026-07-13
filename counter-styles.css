@@ -1,0 +1,70 @@
+/* Estilos del contador de visitas */
+.visit-counter {
+  margin-bottom: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.counter-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.counter-icon {
+  color: #e67e22;
+  font-size: 1rem;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.counter-label {
+  color: #6c757d;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.counter-value {
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.counter-value.loaded {
+  animation: countPulse 0.5s ease;
+}
+
+@keyframes countPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); color: #e67e22; }
+  100% { transform: scale(1); }
+}
+
+/* Estilos para el index principal */
+.card .visit-count-mini {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.card .visit-count-mini i {
+  font-size: 0.7rem;
+}
+
+.card .visit-count-mini .count-num {
+  font-weight: 500;
+  color: #666;
+}
