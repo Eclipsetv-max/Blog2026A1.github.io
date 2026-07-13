@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog 2026 - Perfiles</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="ICON.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="counter-styles.css">
+  <link rel="stylesheet" href="scroll-top.css">
+  <link rel="stylesheet" href="chat-styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f8f9fa;
+      color: #2c3e50;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d3436 100%);
+      padding: 80px 20px 100px;
+      text-align: center;
+      position: relative;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #7b2d8e, #5dade2, #e67e22, #1a3a5c);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 10;
+    }
+
+    .header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      color: #fff;
+      font-size: 3.5rem;
+      font-weight: 400;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .header .subtitle {
+      color: #aaa;
+      font-size: 0.9rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .decorative-line {
+      width: 80px;
+      height: 1px;
+      background: #7b2d8e;
+      margin: 30px auto;
+      position: relative;
+    }
+
+    .decorative-line::before,
+    .decorative-line::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border: 1px solid #7b2d8e;
+      border-radius: 50%;
+    }
+
+    .decorative-line::before { left: -10px; }
+    .decorative-line::after { right: -10px; }
+
+    .container {
+      max-width: 1200px;
+      margin: -50px auto 0;
+      padding: 0 40px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 35px;
+      position: relative;
+      z-index: 20;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      position: relative;
+      border: 1px solid #eee;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+      width: 60px;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .card .photo-container {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 25px;
+      position: relative;
+    }
+
+    .card .photo-container::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .photo-container::before {
+      opacity: 1;
+    }
+
+    .card img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #f0f0f0;
+      transition: all 0.3s ease;
+    }
+
+    .card .name {
+      font-family: 'Cormorant Garamond', serif;
+      color: #1a1a2e;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .card .description {
+      color: #6c757d;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+
+    .card .view-profile {
+      display: inline-block;
+      padding: 10px 25px;
+      background: transparent;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .view-profile {
+      color: #fff;
+    }
+
+    /* Selena - Verde limon */
+    .card-selena::before { background: #a8e063; }
+    .card-selena .photo-container::before { border: 1px solid #a8e063; }
+    .card-selena:hover img { border-color: #a8e063; }
+    .card-selena .view-profile { color: #a8e063; border: 1px solid #a8e063; }
+    .card-selena:hover .view-profile { background: #a8e063; }
+
+    /* Luana - Celeste */
+    .card-luana::before { background: #5dade2; }
+    .card-luana .photo-container::before { border: 1px solid #5dade2; }
+    .card-luana:hover img { border-color: #5dade2; }
+    .card-luana .view-profile { color: #5dade2; border: 1px solid #5dade2; }
+    .card-luana:hover .view-profile { background: #5dade2; }
+
+    /* Thiago - Naranja */
+    .card-thiago::before { background: #e67e22; }
+    .card-thiago .photo-container::before { border: 1px solid #e67e22; }
+    .card-thiago:hover img { border-color: #e67e22; }
+    .card-thiago .view-profile { color: #e67e22; border: 1px solid #e67e22; }
+    .card-thiago:hover .view-profile { background: #e67e22; }
+
+    /* Rihana - Azul marino */
+    .card-rihana::before { background: #1a3a5c; }
+    .card-rihana .photo-container::before { border: 1px solid #1a3a5c; }
+    .card-rihana:hover img { border-color: #1a3a5c; }
+    .card-rihana .view-profile { color: #1a3a5c; border: 1px solid #1a3a5c; }
+    .card-rihana:hover .view-profile { background: #1a3a5c; }
+
+    /* Daniel - Amarillo */
+    .card-daniel::before { background: #f1c40f; }
+    .card-daniel .photo-container::before { border: 1px solid #f1c40f; }
+    .card-daniel:hover img { border-color: #f1c40f; }
+    .card-daniel .view-profile { color: #f1c40f; border: 1px solid #f1c40f; }
+    .card-daniel:hover .view-profile { background: #f1c40f; }
+
+    /* Fernando - Rojo */
+    .card-fernando::before { background: #c0392b; }
+    .card-fernando .photo-container::before { border: 1px solid #c0392b; }
+    .card-fernando:hover img { border-color: #c0392b; }
+    .card-fernando .view-profile { color: #c0392b; border: 1px solid #c0392b; }
+    .card-fernando:hover .view-profile { background: #c0392b; }
+
+    /* Andrea - Morado */
+    .card-andrea::before { background: #9b59b6; }
+    .card-andrea .photo-container::before { border: 1px solid #9b59b6; }
+    .card-andrea:hover img { border-color: #9b59b6; }
+    .card-andrea .view-profile { color: #9b59b6; border: 1px solid #9b59b6; }
+    .card-andrea:hover .view-profile { background: #9b59b6; }
+
+    /* Doris - Rosa */
+    .card-doris::before { background: #e91e90; }
+    .card-doris .photo-container::before { border: 1px solid #e91e90; }
+    .card-doris:hover img { border-color: #e91e90; }
+    .card-doris .view-profile { color: #e91e90; border: 1px solid #e91e90; }
+    .card-doris:hover .view-profile { background: #e91e90; }
+
+    .footer {
+      background: #1a1a2e;
+      color: #6c757d;
+      text-align: center;
+      padding: 40px;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-top: 4px solid;
+      border-image: linear-gradient(90deg, #7b2d8e, #5dade2, #e67e22, #1a3a5c, #f1c40f, #c0392b, #a8e063, #e91e90) 1;
+    }
+
+    .footer .heart {
+      display: inline-block;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        padding: 0 20px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <h1>Nuestro Equipo</h1>
+      <div class="decorative-line"></div>
+      <p class="subtitle">Blog 2026</p>
+    </div>
+  </header>
+
+  <section class="container">
+
+    <a href="selena/index.html" class="card card-selena">
+      <div class="photo-container">
+        <img src="selena/Selena2.jfif" alt="Foto de Selena Barrientos">
+      </div>
+      <h3 class="name">Selena Barrientos</h3>
+      <p class="description">1°S 'A' — Alegre, parlanchina, amante de las series y el voley.</p>
+      <span class="view-profile">Ver Perfil</span>
+    </a>
+
+    <a href="luana/index.html" class="card card-luana">
+      <div class="photo-container">
+        <img src="luana/Luana1.jfif" alt="Foto de Luana">
+      </div>
+      <h3 class="name">Luana</h3>
+      <p class="description">1°S 'A' — Tranquila, responsable, le encanta el voley y cocinar.</p>
+      <span class="view-profile">Ver Perfil</span>
+    </a>
+
+    <a href="thiago/index.html" class="card card-thiago">
+      <div class="photo-container">
+        <img src="thiago/Thiago1 de perfil de index principal.jpeg" alt="Foto de Thiago">
+      </div>
+      <h3 class="name">Thiago</h3>
+      <p class="description">1°S 'A' — Relajado, buena onda, amante del futbol y la PlayStation.</p>
+      <span class="view-profile">Ver Perfil</span>
+    </a>
+
+    <a href="Rihana/index.html" class="card card-rihana">
+      <div class="photo-container">
+        <img src="Rihana/Rihana1.jpeg" alt="Foto de Rihana">
+      </div>
+      <h3 class="name">Rihana</h3>
+      <p class="description">1°S 'A' — Extrovertida, graciosa, carinosa, amante de la belleza y la musica.</p>
+      <span class="view-profile">Ver Perfil</span>
+    </a>
+
+    <a href="daniel/index.html" class="card card-daniel">
+      <div class="photo-container">
+        <img src="daniel/Daniel2.jpeg" alt="Foto de Daniel">
+      </div>
+      <h3 class="name">Daniel</h3>
+      <p class="description">1°S 'A' — Alegre, amante de las series, el voley y pasar con sus amigos.</p>
+      <span class="view-profile">Ver Perfil</span>
+    </a>
+
+    <a href="Fernando/index.html" class="card card-fernando">
+      <div class="photo-container">
+        <img src="Fernando/Fernando1.jfif" alt="Foto de Fernando">
+      </div>
+      <h3 class="name">Fernando</h3>
+      <p class="description">1°S 'A' — Mente inquieta, apasionado por la tecnología, programación y creatividad.</p>
+      <span class="view-profile">Ver Perfil</span>
+    </a>
+
+    <a href="andrea/index.html" class="card card-andrea">
+      <div class="photo-container">
+        <img src="andrea/Andrea1.jpeg" alt="Foto de Andrea">
+      </div>
+      <h3 class="name">Andrea</h3>
+      <p class="description">1°S 'A' — Amable, carinosa, amante de la musica, el baile y Corea del Sur.</p>
+      <span class="view-profile">Ver Perfil</span>
+    </a>
+
+    <a href="doris/index.html" class="card card-doris">
+      <div class="photo-container">
+        <img src="doris/Doris1.jfif" alt="Foto de Doris">
+      </div>
+      <h3 class="name">Doris</h3>
+      <p class="description">1°S 'A' — Alegre, carinosa, amable, amante de los animalitos y de Espana.</p>
+      <span class="view-profile">Ver Perfil</span>
+    </a>
+
+  </section>
+
+  <footer class="footer">
+    <p>Blog 2026 <span class="heart">&mdash;</span> Nuestro Equipo</p>
+  </footer>
+
+  <script>
+    if (sessionStorage.getItem('authenticated') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+  <script src="visit-counter.js"></script>
+  <script src="scroll-top.js"></script>
+  <script src="chat.js"></script>
+
+</body>
+</html>
