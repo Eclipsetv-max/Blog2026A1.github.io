@@ -36,7 +36,7 @@ Blog 2026/
 |------|--------|--------------|--------|
 | Andrea | andrea/ | Morado #9b59b6 | Andrea1.jpeg, Andrea2.jpeg, Andrea3.jpeg |
 | Daniel | daniel/ | Amarillo #f1c40f | Daniel1.jpeg, Daniel2.jpeg |
-| Danna | danna/ | Rosa #e91e63 | Danna1.jfif, Danna2.jfif, Danna3.jfif, Danna4.jfif |
+| Danna | danna/ | Lila #9b59b6 | Danna1.jfif, Danna2.jfif, Danna3.jfif, Danna4.jfif |
 | Diego | diego/ | — | — |
 | Doris | doris/ | Rosa #e91e90 | Doris1.jfif |
 | Fernando | Fernando/ | Rojo #c0392b | Fernando1.jfif |
@@ -47,7 +47,7 @@ Blog 2026/
 
 ## Danna Profile Details
 - **Created**: July 15, 2026
-- **Color**: Rosa oscuro #e91e63
+- **Color**: Lila #9b59b6
 - **Hero image**: Danna4.jfif
 - **Bio image**: Danna2.jfif
 - **Class**: 1S 'B'
