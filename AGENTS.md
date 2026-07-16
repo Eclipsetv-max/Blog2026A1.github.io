@@ -11,7 +11,9 @@ Blog 2026/
 ├── .github/workflows/opencode.yml
 ├── andrea/
 ├── daniel/
+├── danna/
 ├── doris/
+├── diego/
 ├── Fernando/
 ├── luana/
 ├── Rihana/
@@ -28,6 +30,31 @@ Blog 2026/
 ├── visit-counter.js
 └── ICON.ico
 ```
+
+## Person Profiles
+| Name | Folder | Color Accent | Images |
+|------|--------|--------------|--------|
+| Andrea | andrea/ | Morado #9b59b6 | Andrea1.jpeg, Andrea2.jpeg, Andrea3.jpeg |
+| Daniel | daniel/ | Amarillo #f1c40f | Daniel1.jpeg, Daniel2.jpeg |
+| Danna | danna/ | Rosa #e91e63 | Danna1.jfif, Danna2.jfif, Danna3.jfif, Danna4.jfif |
+| Diego | diego/ | — | — |
+| Doris | doris/ | Rosa #e91e90 | Doris1.jfif |
+| Fernando | Fernando/ | Rojo #c0392b | Fernando1.jfif |
+| Luana | luana/ | Celeste #5dade2 | Luana1.jfif |
+| Rihana | Rihana/ | Azul marino #1a3a5c | Rihana1.jpeg |
+| Selena | selena/ | Verde limon #a8e063 | Selena2.jfif |
+| Thiago | thiago/ | Naranja #e67e22 | Thiago1.jpeg |
+
+## Danna Profile Details
+- **Created**: July 15, 2026
+- **Color**: Rosa oscuro #e91e63
+- **Hero image**: Danna4.jfif
+- **Bio image**: Danna2.jfif
+- **Class**: 1S 'B'
+- **Birthday**: 17 de diciembre del 2013
+- **Personality**: Alegre, creativa y empática
+- **Position in class**: No sabo xdd
+- **Note**: Biography updated with real info
 
 ## Git Configuration
 - **Local branch**: master
